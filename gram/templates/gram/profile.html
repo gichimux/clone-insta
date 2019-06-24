@@ -1,0 +1,98 @@
+{% extends 'gram/base.html' %}
+{% block content %}
+<div class="container" style="margin-top:30px;">
+    <div class="row profile">
+        <div class="col-md-2"></div>
+        {% if profile.profile_photo %}
+        <img src="{{profile.profile_photo.url}}" alt="{{profile.username}}" class="img-responsive">
+        {% else %}
+        <img src="/media/profile_pictures/Avatar.png" alt="No Profile Pic">
+        {% endif %}
+        <div class="row">
+            <div class="col-md-4">
+                <h3 style="margin-left:20px;margin-top:30px;">{{user}}</h3>
+            </div>
+            <div class="col-md-4"><a href="{% url 'edit_profile' user.username%}" class="btn btn-light"
+                    style="margin-left:0px;margin-top:25px;">Edit Profile</a></div>
+            <div class="col-md-4"><span><i class="fas fa-cog"
+                        style="font-size:30px;margin-left:20px;margin-top:25px;"></i></span></div>
+
+            <div class="row">
+                <div class="col-md-2" style="margin-left:40px;">
+                    <h5>Posts</h5>
+                </div>
+                <div class="col-md-2" style="margin-left:10px;">
+                    <h5>Followers</h5>
+                </div>
+                <div class="col-md-2" style="margin-left:40px;">
+                    <h5>Following</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+
+    </div>
+    <div class="row" style="margin-top:30px;">
+        <div class="row">
+            <h4 class="text-center" style="margin-left:500px;">Posts</h4>
+        </div>``
+        <!-- Card deck -->
+        <div class="card-deck">
+            {% for single_image in all_images %}
+            <!-- Card -->
+            <div class="col-md-4">
+                <div class="card mb-3">
+
+                    <!--Card image-->
+                    <div class="view overlay">
+
+                        <a data-toggle="modal" data-target="#{{single_image.id}}">
+                            <img class="card-img-top" src="{{single_image.img_path.url}}"
+                                alt="{{single_image.img_title}}">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--Modal: modalYT-->
+            <div class="modal fade" id="{{single_image.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true" style="margin-top:100px;">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <img class="embed-responsive-item" src="{{single_image.img_path.url}}"
+                            alt="{{single_image.img_title}}" style="margin:10px;" allowfullscreen>
+                    </div>
+                </div>
+            </div>
+            <!--Modal: modalYT-->
+            {% endfor %}
+        </div>
+        <!-- Card deck -->
+
+    </div>
+</div>
+<div class="container">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="row">
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3 insta_footer">
+                <a href="">ABOUT US</a>
+                <a href="">SUPPORT</a>
+                <a href="">PRESS</a>
+                <a href="">API</a>
+                <a href="">JOBS</a>
+                <a href="">PRIVACY</a>
+                <a href="">TERMS</a>
+                <a href="">DIRECTORY</a>
+                <a href="">PROFILES</a>
+                <a href="">HASHTAGS</a>
+                <a href="">LANGUAGE</a>
+                <span style="margin-left:30px;color: #999;"> <strong> © 2019 THE_INSTA_GRAM </strong></span>
+
+            </div>
+            <!-- Copyright -->
+        </div>
+    </footer>
+    <!-- Footer -->
+</div>
+{% endblock %}
