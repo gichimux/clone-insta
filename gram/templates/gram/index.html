@@ -1,0 +1,121 @@
+{% extends 'gram/base.html'%}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+            <div class="col-md-8">
+        {% for single_image in all_insta_images%}
+       
+            <!-- Card -->
+            <div class="card" style="margin-top:30px;">
+                <div class="card-header">
+                    <img src="/media/profile_pictures/Avatar.png" alt="{{single_image.img_title}}" class="image_top">
+                    {{user}}
+
+                </div>
+                <!-- Card image -->
+                <div class="view overlay">
+                    <!-- <img class="card-img-top" src="{{single_image.img_path.url}}" alt="{{single_image.img_title}}">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{single_image.id}}">Expand photo</button> -->
+                    <!-- <a data-toggle="modal" data-target="#{{single_image.id}}"><img  class="card-img-top" src="{{single_image.image_path.url}}" alt="{{single_image.image_name}}"></a> -->
+                    <a data-toggle="modal" data-target="#{{single_image.id}}">
+                        <img class="card-img-top" src="{{single_image.img_path.url}}" alt="{{single_image.img_title}}">
+                    </a>
+                </div>
+
+                <!-- Card content -->
+                <div class="card-body">
+                    <div class="icons">
+                        <a href=""><i class="far fa-heart"
+                                style="font-size:30px;margin-right:30px;color: black"></i></a>
+                        <a href=""><i class="far fa-comment"
+                                style="font-size:30px;margin-right:30px;color: black"></i></a>
+                        <a href=""><i class="far fa-arrow-alt-circle-up" style="font-size:30px;color: black"></i></a>
+                    </div>
+
+                    <!-- Title -->
+                    <h4 class="card-title">{{single_image.img_title}}</h4>
+                    <!-- Text -->
+                    <p class="card-text">
+                        {% autoescape on %}
+                        {{single_image.img_caption | safe}}
+                        {% endautoescape %}
+                    </p>
+                    <p class="card-text">{{single_image.date_posted}}</p>
+
+                </div>
+                <!-- Card footer -->
+
+                <textarea name="" id="" cols="75" rows="3"></textarea>
+
+            </div>
+            <!-- Card -->
+        
+        <!--Modal: modalYT-->
+        <div class="modal fade" id="{{single_image.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true" style="margin-top:5px;">
+            <div class="modal-dialog modal-lg" role="document">
+
+                <!--Content-->
+                <div class="modal-content">
+
+                    <!--Body-->
+                    <div class="modal-body">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <img class="embed-responsive-item" src="{{single_image.img_path.url}}"
+                                alt="{{single_image.img_title}}" style="margin:10px;" allowfullscreen>
+                        </div>
+
+                    </div>
+
+                    <div style="margin-left:30px;">
+                        <p><strong>Title:</strong>{{single_image.img_title}} </p>
+                        <p><strong>Caption:</strong>{% autoescape on %} {{single_image.img_caption | safe}}
+                            {% endautoescape %}
+                        </p>
+                        <p><strong>Posted on:</strong>{{single_image.date_posted}} </p>
+                    </div>
+
+                    <div class="modal-footer justify-content-center flex-column flex-md-row">
+                        <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
+                            data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        <!--Modal: modalYT-->
+
+        {% empty %}
+        <div class="row">
+            <h2 class="text-center">No Uploaded images yet</h2>
+        </div>
+        {% endfor %}
+    </div>
+        <div class="col-md-4 sidebar" style="margin-top:31px;">
+            <div class="content-section ">
+                <div class="card-header">
+                    Stories
+                </div>
+                <div class="content">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-light">Latest Posts</li>
+                        <li class="list-group-item list-group-item-light">Announcements</li>
+                        <li class="list-group-item list-group-item-light">Calendars</li>
+                        <li class="list-group-item list-group-item-light">etc</li>
+                        <li class="list-group-item list-group-item-light">Calendars</li>
+                        <li class="list-group-item list-group-item-light">etc</li>
+                        <li class="list-group-item list-group-item-light">Calendars</li>
+                        <li class="list-group-item list-group-item-light">etc</li>
+                        <li class="list-group-item list-group-item-light">Calendars</li>
+                        <li class="list-group-item list-group-item-light">etc</li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
