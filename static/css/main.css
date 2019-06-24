@@ -1,0 +1,48 @@
+#title {
+    font-family: 'Cookie', cursive;
+    font-size: 30px;
+}
+
+.insta_footer a {
+    color: #003569;
+    font: inherit;
+    font-family: 'Oswald', sans-serif;
+    margin-right: 10px;
+}
+
+.sore_img img {
+    width: 150px;
+}
+
+#login {
+    font-family: 'Cookie', cursive;
+    font-size: 40px;
+}
+
+.image_top {
+    border-radius: 80%;
+    width: 50px;
+    height: 50px;
+}
+
+.sidebar {
+    width: 35%;
+    height: 25vh;
+    min-height: 300px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10%;
+}
+
+.content {
+    overflow: auto;
+    width: 100%;
+    height: 25vh;
+    min-height: 300px;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
