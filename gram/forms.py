@@ -9,4 +9,4 @@ class ImageForm(forms.ModelForm):
 class ProfileEditorForm(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ['user_profile']
+        exclude = ['user_profile']  
