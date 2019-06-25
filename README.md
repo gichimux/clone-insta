@@ -1,7 +1,7 @@
 # Gram Application
 
-## what it does
-this application is an instagram clone made using django
+## what it is
+This application is an instagram clone made using django
 
 ## Author
 [George Mwai](https://github.com/gichimux)
