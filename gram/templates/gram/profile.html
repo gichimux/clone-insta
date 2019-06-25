@@ -13,7 +13,7 @@
                 <h3 style="margin-left:20px;margin-top:30px;">{{user}}</h3>
             </div>
             <div class="col-md-4"><a href="{% url 'edit_profile' user.username%}" class="btn btn-light"
-                    style="margin-left:0px;margin-top:25px;">Edit Profile</a></div>
+                    style="margin-left:0px;margin-top:25px;"><i class="fas fa-edit" style="font-size:20px;"></i> Edit Profile</a></div>
             <div class="col-md-4"><span><i class="fas fa-cog"
                         style="font-size:30px;margin-left:20px;margin-top:25px;"></i></span></div>
 
@@ -34,10 +34,15 @@
     </div>
     <div class="row" style="margin-top:30px;">
         <div class="row">
-            <h4 class="text-center" style="margin-left:500px;">Posts</h4>
-        </div>``
+            <h4 class="text-center" style="margin-left:500px;">Posts</h4>&nbsp&nbsp
+                    <a href="{%url 'new_image'%}" class="btn btn-light" style="margin:auto;"><i class="fas fa-image" style="font-size:20px;"></i> Post a photo</a>
+
+        </div>  
+             
+
         <!-- Card deck -->
         <div class="card-deck">
+        
             {% for single_image in all_images %}
             <!-- Card -->
             <div class="col-md-4">
@@ -79,7 +84,6 @@
                 <a href="">ABOUT US</a>
                 <a href="">SUPPORT</a>
                 <a href="">PRESS</a>
-                <a href="">API</a>
                 <a href="">JOBS</a>
                 <a href="">PRIVACY</a>
                 <a href="">TERMS</a>
@@ -87,7 +91,7 @@
                 <a href="">PROFILES</a>
                 <a href="">HASHTAGS</a>
                 <a href="">LANGUAGE</a>
-                <span style="margin-left:30px;color: #999;"> <strong> © 2019 THE_INSTA_GRAM </strong></span>
+                <span style="margin-left:30px;color: #999;"> <strong> © 2019 gichimu </strong></span>
 
             </div>
             <!-- Copyright -->
