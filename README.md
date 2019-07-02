@@ -22,7 +22,7 @@ They can also click on the profile button from where they can view all their inf
 
 ### Project Setup instructions
 Use the following commands to use this project.
-- git clone `https://github.com/Antavio/The_Gram.git`
+- git clone `https://github.com/gichimux/clone-insta.git`
 - install `python 3.6`
 - Install [Postgresql](https://www.postgresql.org/download/)
 - cd The_Gram
